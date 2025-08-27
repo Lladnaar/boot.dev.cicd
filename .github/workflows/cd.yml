@@ -39,7 +39,7 @@ jobs:
             run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/intrepid-honor-470205-f2/notely-ar-repo/notely:latest .'
 
           - name: 'Run database migrations'
-            run: 'npm db:migrate'
+            run: 'npm run db:migrate'
 
           - name: 'Deploy to Cloud Run'
             run: 'gcloud run deploy notely --image us-central1-docker.pkg.dev/intrepid-honor-470205-f2/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project intrepid-honor-470205-f2 --max-instances=4'
